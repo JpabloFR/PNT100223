@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title> Pagina WEB 100223 </title>
+	</head>
+	
+	<body>
+
+		<!-- Esto es un comentario en HTML !-->
+
+		<h1>1. Botones con Alertas y Confirmaciones:</h1>
+
+		<button> Botón que no hace NADA </button>
+		<br><br>
+
+		<button onclick="accion_1()" id="Bt1"> Botón #1 </button>
+		<br>
+
+		<button onclick="accion_2()" id="Bt2"> Botón #2 </button>
+		<Br><Br>
+
+		<button onclick="accion_3()" id="Bt3"> Botón #3 </button>
+		<Br><Br><Br>
+
+		<h2>2. Despliegue de datos (Interfaz de Entrada y Salida):</h2>
+
+		<p> Hola, a continuación solicitaremos algunos datos personales, esperamos nos puedas colaborar con tu información. ¡Gracias! </p> <Br>
+
+		Primer nombre: <input type="text" name="Recibir texto 1" id="Tx_1">
+		Segundo nombre: <input type="text" name="Recibir texto 2" id="Tx_2"> 
+		<Br>
+		<p> Primer apellido: <input type="text" name="Recibir texto 3" id="Tx_3"> </p>
+		<p> Segundo apellido: <input type="text" name="Recibir texto 4" id="Tx_4"> </p>
+
+		<button onclick="accion_4()" id="Bt4"> CONCATENAR NOMBRE COMPLETO </button> 
+		<br><br>
+
+		Nombres:&nbsp;<output id="Out1"> </output> y Apellidos:&nbsp;<output id="Out2"> </output>
+
+		<style type="text/css">
+
+			/* Esto es un comentario en CSS */
+
+			body{ 
+					background-image: url(FondoWEB1.jpg);
+					background-repeat: round;
+					color: rgba(25,167,120,1.0);
+				}
+
+			h1{color: rgba(131,35,57,1.0)}
+			h2{color: rgba(131,35,57,0.8)}
+
+			#Out1{color: rgba(255,0,0,1.0);}
+			#Out2{color: rgba(255,0,0,0.8);}
+			#Bt4{color: rgba(255,0,0,1.0);}
+			
+		</style>
+
+		<script type="text/javascript">
+
+			// Esto es un comentario en Javascript
+
+			function accion_1() 
+			{
+				alert("Alerta del Botón #1")
+			}
+
+			function accion_2()
+			{
+				confirm("Confirmación del Botón #2")
+			}
+
+			function accion_3()
+			{
+				alert("Alerta del Botón #3"); 
+				confirm("Confirmación del Botón #3")
+			}
+
+			function accion_4()
+			{
+				var NombreCompleto= document.getElementById("Tx_1").value+" "+
+									document.getElementById("Tx_2").value+" "+
+									document.getElementById("Tx_3").value+" "+
+									document.getElementById("Tx_4").value
+
+				alert(NombreCompleto)
+
+				var Nombres= document.getElementById("Tx_1").value+" "+document.getElementById("Tx_2").value
+				document.getElementById("Out1").innerHTML=Nombres
+				var Apellidos= document.getElementById("Tx_3").value+" "+document.getElementById("Tx_4").value
+				document.getElementById("Out2").innerHTML=Apellidos
+			}
+			
+		</script>
+
+	</body>
+
+</html>
